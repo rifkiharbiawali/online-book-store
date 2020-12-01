@@ -18,10 +18,10 @@ public interface BookMapper {
     @Mapping(target = "id", expression = "java(entity.getBookId())")
     @Mapping(target = "authorId", expression = "java(entity.getAuthor().getAuthorId())")
     @Mapping(target = "publisherId", expression = "java(entity.getPublisher().getPublisherId())")
-    @Mapping(source = "atuhor", target = "authorName", qualifiedByName = "getAuthorName")
-    @Mapping(source = "atuhor", target = "publisherName", qualifiedByName = "getPublisherName")
+    @Mapping(source = "author", target = "authorName", qualifiedByName = "getAuthorName")
+    @Mapping(source = "author", target = "publisherName", qualifiedByName = "getPublisherName")
 
-    BookDto toDto(Book entity);
+//    BookDto toDto(Book entity);
     Book toEntities(BookDto dto);
 
     List<BookDto> toDtos(List<Book> Entities);
