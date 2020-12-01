@@ -32,7 +32,7 @@ public class AuthorController {
     }
     @GetMapping("/authors")
     public ResponseEntity<List<AuthorDto>>  getAllAuthors() {
-        return getAll().apply((List<AuthorDto>) service.findAll());
+        return getAll().apply(service.findAll().getBody());
     }
 
 

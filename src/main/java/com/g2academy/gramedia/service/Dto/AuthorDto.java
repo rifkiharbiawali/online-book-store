@@ -14,5 +14,5 @@ public class AuthorDto {
     private String name;
     private String address;
     private String url;
-    private Set<BookDto> books;
+    private Set<BookDto> bookDtos;
 }

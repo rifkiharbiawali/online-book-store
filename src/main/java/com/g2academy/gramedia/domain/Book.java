@@ -23,6 +23,10 @@ import java.util.Set;
 @Table(name = "books")
 public class Book extends BaseEntity<String> implements Serializable {
 
+    public Long getAuthorId(){
+        return id;
+    }
+
     @Column(name = "isbn")
     private String isbn;
 

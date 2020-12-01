@@ -16,8 +16,10 @@ public class BookDto {
     private YearMonth year;
     private String title;
     private Double price;
-    private String AuthorName;
-    private String PublisherName;
+//    private String authorName;
+//    private String publisherName;
+    private Long authorId;
+//    private Long publisherId;
 //    private PublisherDto publisher;
 //    private AuthorDto author;
 }

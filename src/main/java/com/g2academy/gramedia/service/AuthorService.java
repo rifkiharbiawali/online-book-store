@@ -54,7 +54,7 @@ public class AuthorService {
                 .url(authorDto.getUrl())
                 .build();
 
-        for (BookDto bookDto : authorDto.getBooks()){
+        for (BookDto bookDto : authorDto.getBookDtos()){
                 Book bookE = Book.builder()
                         .author(authorE)
                         .isbn(bookDto.getIsbn())

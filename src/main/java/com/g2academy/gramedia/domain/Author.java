@@ -21,6 +21,10 @@ import java.util.Set;
 @Table(name = "authors")
 public class Author extends BaseEntity<String> implements Serializable {
 
+    public Long getAuthorId(){
+        return id;
+    }
+
     @Column(name = "name")
     private String name;
 

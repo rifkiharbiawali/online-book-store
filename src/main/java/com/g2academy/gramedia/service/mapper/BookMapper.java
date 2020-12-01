@@ -11,29 +11,24 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper(uses = AuthorMapper.class)
+@Mapper
 public interface BookMapper {
     BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
 
-    @Mapping(target = "id", expression = "java(entity.getBookId())")
     @Mapping(target = "authorId", expression = "java(entity.getAuthor().getAuthorId())")
-    @Mapping(target = "publisherId", expression = "java(entity.getPublisher().getPublisherId())")
-    @Mapping(source = "author", target = "authorName", qualifiedByName = "getAuthorName")
-    @Mapping(source = "author", target = "publisherName", qualifiedByName = "getPublisherName")
+    @Mapping(source = "author", target = "authorId", qualifiedByName = "getAuthorId")
 
-//    BookDto toDto(Book entity);
+    @Named("getAuthorId")
+    default Long authorEntityGetAuthorId(Author authorEntity){
+        return authorEntity.getAuthorId();
+    }
+
+    BookDto toDto(Book entity);
     Book toEntities(BookDto dto);
 
     List<BookDto> toDtos(List<Book> Entities);
     List<Book> toEntities(List<BookDto> dtos);
 
-    @Named("getAuthorName")
-    default String authorEntityGetAuthorId(Author authorEntity){
-        return authorEntity.getName();
-    }
 
-    @Named("getPublisherName")
-    default String authorEntityGetAuthorId(Publisher publisherEntity){
-        return publisherEntity.getName();
-    }
+
 }
