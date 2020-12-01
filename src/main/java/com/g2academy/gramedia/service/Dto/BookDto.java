@@ -4,9 +4,10 @@ import lombok.*;
 
 import java.time.YearMonth;
 
-@Setter
-@Getter
-@NoArgsConstructor
+//@Setter
+//@Getter
+//@NoArgsConstructor
+@Value
 @AllArgsConstructor
 @Builder
 public class BookDto {
@@ -15,6 +16,8 @@ public class BookDto {
     private YearMonth year;
     private String title;
     private Double price;
-    private PublisherDto publisher;
-    private AuthorDto author;
+    private Long AuthorId;
+    private Long PublisherId;
+//    private PublisherDto publisher;
+//    private AuthorDto author;
 }

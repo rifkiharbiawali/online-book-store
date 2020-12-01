@@ -4,9 +4,10 @@ import lombok.*;
 
 import java.util.Set;
 
-@Setter
-@Getter
-@NoArgsConstructor
+//@Setter
+//@Getter
+//@NoArgsConstructor
+@Value
 @AllArgsConstructor
 @Builder
 public class AuthorDto {
